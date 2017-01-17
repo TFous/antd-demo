@@ -1,0 +1,30 @@
+{
+  "entry": "src/index.js",
+  "disableCSSModules": false,
+  "less": false,
+  "publicPath": "/",
+  "autoprefixer": null,
+  "proxy": {
+   "/db_items": {
+          "target": "http://localhost:3001",
+          "changeOrigin": false,
+          "pathRewrite": { "^/db_items" : "" }
+        },
+   "/db_arms": {
+          "target": "http://localhost:3000",
+          "changeOrigin": false,
+          "pathRewrite": { "^/db_arms" : "" }
+        }
+  },
+  "extraBabelPlugins": [
+    "transform-runtime",
+    ["import", { "libraryName": "antd", "style": true }]
+  ],
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr"
+      ]
+    }
+  }
+}

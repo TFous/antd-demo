@@ -1,0 +1,24 @@
+{
+  "nav_arms":{
+    "name":"武器系统","main":[
+      {"name": "手枪", "Show": true, "link": true,"Explain":false},
+      {"name": "突击步枪", "Show": true, "link": true,"Explain":false},
+      {"name": "冲锋枪", "Show": true, "link": true,"Explain":false},
+      {"name": "霰弹枪", "Show": true, "link": true,"Explain":false},
+      {"name": "狙击步枪", "Show": true, "link": true,"Explain":false},
+      {"name": "轻机枪", "Show": true, "link": true,"Explain":false},
+      {"name": "手雷", "Show": true, "link": false,"Explain":true},
+      {"name": "近战武器", "Show": true, "link": false,"Explain":true}
+    ]
+  },
+  "nav_itmes":{
+    "name":"道具系统","main":[
+      {"name": "武器挂件", "Show": false, "link": false,"Explain":true},
+      {"name": "装置", "Show": false, "link": false,"Explain":true},
+      {"name": "名片", "Show": false, "link": false,"Explain":true},
+      {"name": "道具", "Show": false, "link": false,"Explain":true},
+      {"name": "机友插件", "Show": false, "link": false,"Explain":true},
+      {"name": "服饰", "Show": false, "link": false,"Explain":true}
+    ]
+  }
+}
