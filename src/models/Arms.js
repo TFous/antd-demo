@@ -16,7 +16,7 @@ export default {
   subscriptions: {
     setup({dispatch, history}) {  // eslint-disable-line
       return history.listen(({pathname, query}) => {
-        if (pathname === '/arms') {
+        if (pathname === '/page_arms') {
           localStorage.clear();
           dispatch({
             type: 'fetch', payload: {
@@ -24,10 +24,12 @@ export default {
             }
           });
         }
-        if (pathname === '/items') {
+        if (pathname === '/page_items') {
           localStorage.clear();
           dispatch({
-            type: 'fetch', payload: {rightFilter:false,}
+            type: 'fetch', payload: {
+              rightFilter:false,
+              }
           });
         }
       });
@@ -40,21 +42,26 @@ export default {
       rightFilter = localStorage.rightFilter || false
     }
     }, {call, put}) {
+
+        const options = {mode: 'no-cors'};
+
+
       var navurl,nlisturl;
-      if (window.location.href.indexOf("arms") > 0) {
+      if (window.location.href.indexOf("page_arms") > 0) {
         navurl='/db_arms/nav';
         nlisturl='/db_arms/arms';
       }
-      if (window.location.href.indexOf("items") > 0) {
+      if (window.location.href.indexOf("page_items") > 0) {
         navurl='/db_items/nav';
         nlisturl='/db_items/items';
       }
       const {data}=yield call(armsService.query,navurl);
       const weaponData = yield call(armsService.queryList,nlisturl);
-      const title = data.name;
-      const nav = data.main;
-      const weaponClass = data.main[index].name;
-      const weaponList = weaponData.data.filter(weapon => weapon.tips == weaponClass);
+      const title = data.data.name;
+
+      const nav = data.data.main;
+      const weaponClass = data.data.main[index].name;
+      const weaponList = weaponData.data.data.filter(weapon => weapon.tips == weaponClass);
       const weaponMsg = weaponList.filter(weapon => weapon.wid == (wid || localStorage.wid));
 
       yield put({
@@ -95,7 +102,6 @@ export default {
   },
   reducers: {
     save(state, {payload:{title, nav, index, weaponList, weaponMsg, rightFilter, wid, weaponClass}}) {
-      console.log({...state, title, nav, index, weaponList, weaponMsg, rightFilter, wid, weaponClass})
       return {...state, title, nav, index, weaponList, weaponMsg, rightFilter, wid, weaponClass};
     },
   },

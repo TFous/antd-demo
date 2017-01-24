@@ -1,18 +1,19 @@
 {
   "private": true,
   "scripts": {
-  	"server": "node server.js",
+    "server": "node server.js",
     "start": "roadhog server",
     "build": "roadhog build",
     "lint": "eslint --ext .js src test",
     "precommit": "npm run lint"
   },
   "dependencies": {
-  	 "antd": "^2.5.2",
+    "antd": "^2.5.2",
     "babel-runtime": "^6.9.2",
-    "json-server": "^0.9.4",
-     "lowdb": "^0.14.0",
     "dva": "^1.2.1",
+    "express": "^4.14.0",
+    "json-server": "^0.9.4",
+    "lowdb": "^0.14.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
   },

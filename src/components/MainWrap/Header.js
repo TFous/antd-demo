@@ -11,11 +11,11 @@ function Header({dispatch,location }) {
       theme="dark"
       style={{position:"relative",zIndex:999999}}
     >
-      <Menu.Item key="/items">
-        <Link to="/items"><Icon type="bars" />items</Link>
+      <Menu.Item key="/page_items">
+        <Link to="/page_items"><Icon type="bars" />items</Link>
       </Menu.Item>
-      <Menu.Item key="/arms">
-        <Link to="/arms"><Icon type="bars" />arms</Link>
+      <Menu.Item key="/page_arms">
+        <Link to="/page_arms"><Icon type="bars" />arms</Link>
       </Menu.Item>
       <Menu.Item key="/">
         <Link to="/"><Icon type="home" />Home</Link>

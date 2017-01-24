@@ -11,8 +11,8 @@
           "pathRewrite": { "^/db_items" : "" }
         },
    "/db_arms": {
-          "target": "http://localhost:3000",
-          "changeOrigin": false,
+          "target": "http://localhost:9000",
+          "changeOrigin": true,
           "pathRewrite": { "^/db_arms" : "" }
         }
   },
